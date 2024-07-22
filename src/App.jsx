@@ -33,19 +33,19 @@ const App = () => {
     if(result === 'You Win'){
       setScore(score => ({
         ...score,
-        wins: score.wins++
+        wins: score.wins + 1
       }))
       setGif(`gif/wins/${Math.floor(Math.random() * 20) + 1}.gif`)
     }else if(result === 'You Lose'){
       setScore(score => ({
         ...score,
-        losses: score.losses++
+        losses: score.losses + 1
       }))
       setGif(`gif/losses/${Math.floor(Math.random() * 20) + 1}.gif`)
     }else if(result === 'Tie'){
       setScore(score => ({
         ...score,
-        ties: score.ties++
+        ties: score.ties + 1
       }))
       setGif(`gif/ties/${Math.floor(Math.random() * 20) + 1}.gif`)
     }
@@ -154,7 +154,7 @@ const App = () => {
             </div>
           </div>
           <div className='gif'>
-            <img src={gif} alt="" />
+            <img src={gif} alt="Result GIF" loading='lazy' />
           </div>
         </>
       }
